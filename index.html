@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <!-- Compagnia di viaggio -->
     <main class="container-custom debug">
         <div class="container debug contenitore">
             <section class="conpagnia d-flex text-center justify-content-center">
@@ -21,6 +22,7 @@
             </section>
         </div>
     </main>
+    <!-- Complilazione utente e km da effettuare -->
     <section class="container-custom debug d-flex align-items-center">
         <div class="contenitore debug p-4">
             <section class="d-flex text-center justify-content-center">
@@ -44,11 +46,15 @@
                         <label for="eta" class="form-label">Inserisci i km che vuoi percorrere</label>
                         <input type="text" class="form-control" id="" placeholder="km">
                     </div>
-
                     <div class="col-12 d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary">Acquista</button>
                     </div>
                 </form>
+                <section id="risultato" class="mt-4 text-center" style="display: none;">
+                    <h3>Dettagli Acquisto</h3>
+                    <p id="datiUtente"></p>
+                    <p id="prezzoFinale"></p>
+                </section>
         </div>
     </section>
 
