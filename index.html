@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <section>
     <!-- Compagnia di viaggio -->
     <main class="container-custom debug">
         <div class="container debug contenitore">
@@ -31,7 +32,8 @@
             <form class="row g-3">
                 <div class="col-md-6">
                     <label for="nome" class="form-label">Inserisci il tuo nome</label>
-                    <input type="text" class="form-control" id="" placeholder="Nome">
+                    <input type="text" class="form-control" id="nome" placeholder="Nome">
+                    <p id="risultatoNome"></p>
                 </div>
                 <div class="col-md-6">
                     <label for="cognome" class="form-label">Inserisci il tuo cognome</label>
@@ -46,17 +48,51 @@
                         <label for="eta" class="form-label">Inserisci i km che vuoi percorrere</label>
                         <input type="text" class="form-control" id="" placeholder="km">
                     </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Acquista</button>
-                    </div>
+                    <section class="d-flex">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success">Genera</button>
+                            <!-- <button type="submit" class="btn btn-success">Annulla</button> -->
+                        </div>
+                    </section>
                 </form>
-                <section id="risultato" class="mt-4 text-center" style="display: none;">
-                    <h3>Dettagli Acquisto</h3>
-                    <p id="datiUtente"></p>
-                    <p id="prezzoFinale"></p>
-                </section>
+    </section>
+    <section class="d-flex text-center justify-content-center">
+        <div class="contenitore debug">
+            <h2>Dettagli Acquisto</h2>
         </div>
     </section>
+    <section class="container-custom d-flex debug">
+        <div class="contenitore debug">
+            <h3>Dettaglio passeggero</h3>
+        </div>
+    </section>
+    <section class="container-custom d-flex align-items-center">
+        <div class="contenitore d-flex ustify-content-center debug">
+            <div class="nome-passeggero col-auto">
+                <h4 class="p-3">Nome passeggero</h4>
+                <p class="px-3" id=""><strong>ciao</strong></p>
+            </div>
+            <div class="col">
+                <h4 class="p-3">Offerta</h4>
+                <p class="px-3" id=""><strong>ciao</strong></p>
+            </div>
+            <div class="col">
+                <h4 class="p-3">Carrozza</h4>
+                <p class="px-3" id=""><strong>ciao</strong></p>
+            </div>
+            <div class="col">
+                <h4 class="p-3">Codice CP</h4>
+                <p class="px-3" id=""><strong>ciao</strong></p>
+            </div>
+            <div class="col">
+                <h4 class="p-3 d-flex">Costo Biglietto</h4>
+                <p class="px-3" id=""><strong>ciao</strong></p>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
 
 
 

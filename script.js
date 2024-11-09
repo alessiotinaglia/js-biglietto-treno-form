@@ -31,6 +31,24 @@ console.clear();
 // // Prezzo finale con massimo due decimali
 // console.log(`Il prezzo finale del viaggio è: ${prezzoFinale.toFixed(2)} €`);
 
+const elInputName = document.getElementById("nome");
+console.log(elInputName);
+
+const elP = document.getElementById("risultatoNome");
+console.log(elP);
+
+
+// const myButton = document.querySelector("button");
+
+// myButton.addEventListener("click", function (event){
+//     console.log(elInputName.value);
+//     elP.innerText = elInputName.value;
+
+// })
+
+
+
+
 
 
 
