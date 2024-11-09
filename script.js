@@ -60,6 +60,12 @@ form.addEventListener("submit", function (event) {
     const eta = parseInt(etaField.value);
     const km = parseInt(kmField.value);
 
+    // Stampiamo i valori nella console
+    console.log("Nome: " + nome);
+    console.log("Cognome: " + cognome);
+    console.log("Età: " + eta);
+    console.log("Km: " + km);
+
     // Calcolo del prezzo
     let prezzoBase = km * prezzoPerKm;
     let prezzoFinale = prezzoBase;
