@@ -34,10 +34,10 @@
 const prezzoPerKm = 0.21;
 
 // tutti gli elementi del form
-const nomeField = document.getElementById("nomeField");
-const cognomeField = document.getElementById("cognomeField");
-const etaField = document.getElementById("etaField");
-const kmField = document.getElementById("kmField");
+const nomeField = document.getElementById("nome-field");
+const cognomeField = document.getElementById("cognome-field");
+const etaField = document.getElementById("eta-field");
+const kmField = document.getElementById("km-field");
 const form = document.getElementById("form");
 
 // tutti gli elementi del biglietto da stampare 
@@ -61,15 +61,20 @@ form.addEventListener("submit", function (event) {
     let prezzoFinale = prezzoBase;
 
     // Applicazione degli sconti in base all'età
-    if (eta < 19) {
-        prezzoFinale *= 0.8; // Sconto del 20% per i minorenni
-    } else if (eta > 64) {
-        prezzoFinale *= 0.6; // Sconto del 40% per gli over 65
+    let categoria = '';
+    if (eta <= 18) {
+        categoria = 'Young'; // Categoria per i minorenni
+        prezzoFinale *= 0.8; // Sconto del 20% per i giovani
+    } else if (eta <= 64) {
+        categoria = 'Standard'; // Categoria per adulti
+    } else {
+        categoria = 'Senior'; // Categoria per over 64
+        prezzoFinale *= 0.6; // Sconto del 40% per i senior
     }
 
     // Popolamento dei dati nel biglietto
     nomeOutput.innerText = nome + " " + cognome;
-    offertaOutput.innerText = "Standard"; // Offerta fissa per semplicità
+    offertaOutput.innerText = categoria; 
     carrozzaOutput.innerText = "1"; // Carrozza fissa per semplicità
     codiceCPOutput.innerText = "12345"; // Codice CP fittizio
     priceOutput.innerText = prezzoFinale.toFixed(2) + " €"; // Prezzo con 2 decimali
