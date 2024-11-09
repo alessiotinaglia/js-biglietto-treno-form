@@ -29,7 +29,7 @@
                 <section class="d-flex text-center justify-content-center">
                     <h1>Acquista il tuo biglietto</h1>
                 </section>
-                <form class="row g-3">
+                <form class="row g-3" id="form">
                     <div class="col-md-6">
                         <label for="nome" class="form-label">Inserisci il tuo nome</label>
                         <input type="text" class="form-control" id="nome-field" placeholder="Nome">
@@ -57,7 +57,7 @@
                     </form>
         </section>
 
-        <!-- <footer style="display: none;"> -->
+        <footer id="biglietto">
             <section class="d-flex text-center justify-content-center">
                 <div class="contenitore debug">
                     <h2>Dettagli Acquisto</h2>
@@ -72,23 +72,23 @@
                 <div class="contenitore d-flex ustify-content-center p-3 debug">
                     <div class="nome-passeggero col-auto">
                         <h4 class="p-3">Nome passeggero</h4>
-                        <p class="px-3" id="nome"><strong></strong></p>
+                        <p class="px-3" id="nome-output"><strong></strong></p>
                     </div>
                     <div class="col">
                         <h4 class="p-3">Offerta</h4>
-                        <p class="px-3" id="offerta"><strong</strong></p>
+                        <p class="px-3" id="offerta-output"><strong</strong></p>
                     </div>
                     <div class="col">
                         <h4 class="p-3">Carrozza</h4>
-                        <p class="px-3" id="carrozza"><strong></strong></p>
+                        <p class="px-3" id="carrozza-output"><strong></strong></p>
                     </div>
                     <div class="col">
                         <h4 class="p-3">Codice CP</h4>
-                        <p class="px-3" id=""><strong></strong></p>
+                        <p class="px-3" id="codice-cp-output"><strong></strong></p>
                     </div>
                     <div class="col">
                         <h4 class="p-3 d-flex">Costo Biglietto</h4>
-                        <p class="px-3" id="price"><strong></strong></p>
+                        <p class="px-3" id="price-output"><strong></strong></p>
                     </div>
                 </div>
             </section>

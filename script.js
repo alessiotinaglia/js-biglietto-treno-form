@@ -1,5 +1,4 @@
 "use strict"
-console.clear();
 
 // // Posta la domanda quanti km e l'età
 // const input = prompt("Inserisci il numero di km che vuoi effettuare e la tua età, separati da una virgola (es: 100, 30):");
@@ -31,35 +30,50 @@ console.clear();
 // // Prezzo finale con massimo due decimali
 // console.log(`Il prezzo finale del viaggio è: ${prezzoFinale.toFixed(2)} €`);
 
-
+// Prezzo per km (puoi modificarlo)
+const prezzoPerKm = 0.21;
 
 // tutti gli elementi del form
-
 const nomeField = document.getElementById("nomeField");
 const cognomeField = document.getElementById("cognomeField");
 const etaField = document.getElementById("etaField");
 const kmField = document.getElementById("kmField");
-const form = document.querySelector("form");
+const form = document.getElementById("form");
 
 // tutti gli elementi del biglietto da stampare 
+const nomeOutput = document.getElementById("nome-output");
+const offertaOutput = document.getElementById("offerta-output");
+const carrozzaOutput = document.getElementById("carrozza-output");
+const codiceCPOutput = document.getElementById("codice-cp-output");
+const priceOutput = document.getElementById("price-output");
 
-const nome = document.getElementById("nome");
-const offerta = document.getElementById("offerta");
-const carrozza = document.getElementById("carrozza");
-const km = document.getElementById("km");
-const price = document.getElementById("price");
+form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita l'invio del form e il ricaricamento della pagina
 
-// all'invio del form, si aggiornano i valori del biglietto 
+    // Prendo i valori dai campi del form
+    const nome = nomeField.value;
+    const cognome = cognomeField.value;
+    const eta = parseInt(etaField.value);
+    const km = parseInt(kmField.value);
 
-form.addEventListener("submit", function(event){
-    event.preventDefault()
-})
+    // Calcolo del prezzo
+    let prezzoBase = km * prezzoPerKm;
+    let prezzoFinale = prezzoBase;
 
-// aggiorniamo i valori del biglietto stampato 
+    // Applicazione degli sconti in base all'età
+    if (eta < 19) {
+        prezzoFinale *= 0.8; // Sconto del 20% per i minorenni
+    } else if (eta > 64) {
+        prezzoFinale *= 0.6; // Sconto del 40% per gli over 65
+    }
 
-nome.innerText = titleField.value;
-
-ticketprice.inneerTeXT = price.toFixed(2) + "€";
+    // Popolamento dei dati nel biglietto
+    nomeOutput.innerText = nome + " " + cognome;
+    offertaOutput.innerText = "Standard"; // Offerta fissa per semplicità
+    carrozzaOutput.innerText = "1"; // Carrozza fissa per semplicità
+    codiceCPOutput.innerText = "12345"; // Codice CP fittizio
+    priceOutput.innerText = prezzoFinale.toFixed(2) + " €"; // Prezzo con 2 decimali
+});
 
 
 
