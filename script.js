@@ -32,6 +32,8 @@
 
 // Prezzo per km (puoi modificarlo)
 const prezzoPerKm = 0.21;
+const numeroCarrozza = Math.floor(Math.random() * 50) + 1;
+const codiceCP = Math.floor(Math.random() * 100000) + 1;
 
 // tutti gli elementi del form
 const nomeField = document.getElementById("nome-field");
@@ -48,7 +50,9 @@ const codiceCPOutput = document.getElementById("codice-cp-output");
 const priceOutput = document.getElementById("price-output");
 
 form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita l'invio del form e il ricaricamento della pagina
+    event.preventDefault();
+
+    // Verifica che tutti i campi siano compilati
 
     // Prendo i valori dai campi del form
     const nome = nomeField.value;
@@ -63,21 +67,29 @@ form.addEventListener("submit", function (event) {
     // Applicazione degli sconti in base all'età
     let categoria = '';
     if (eta <= 18) {
-        categoria = 'Young'; // Categoria per i minorenni
-        prezzoFinale *= 0.8; // Sconto del 20% per i giovani
+        categoria = 'Young';
+        prezzoFinale *= 0.8;
     } else if (eta <= 64) {
-        categoria = 'Standard'; // Categoria per adulti
+        categoria = 'Standard';
     } else {
-        categoria = 'Senior'; // Categoria per over 64
-        prezzoFinale *= 0.6; // Sconto del 40% per i senior
+        categoria = 'Senior';
+        prezzoFinale *= 0.6;
     }
 
     // Popolamento dei dati nel biglietto
     nomeOutput.innerText = nome + " " + cognome;
-    offertaOutput.innerText = categoria; 
-    carrozzaOutput.innerText = "1"; // Carrozza fissa per semplicità
-    codiceCPOutput.innerText = "12345"; // Codice CP fittizio
-    priceOutput.innerText = prezzoFinale.toFixed(2) + " €"; // Prezzo con 2 decimali
+    offertaOutput.innerText = categoria;
+    carrozzaOutput.innerText = numeroCarrozza;
+    codiceCPOutput.innerText = codiceCP;
+    priceOutput.innerText = prezzoFinale.toFixed(2) + " €";
+
+    document.getElementById("biglietto").style.display = "block";
+    biglietto.style.display = "block";
+});
+
+// selezionando il bottone del reset, resetta il form e nasconde la parte sotto
+document.getElementById("button-reset").addEventListener("click", function () {
+    document.getElementById("biglietto").style.display = "none";
 });
 
 
