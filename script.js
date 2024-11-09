@@ -31,24 +31,35 @@ console.clear();
 // // Prezzo finale con massimo due decimali
 // console.log(`Il prezzo finale del viaggio è: ${prezzoFinale.toFixed(2)} €`);
 
-const elInputName = document.getElementById("nome");
-console.log(elInputName);
-
-const elP = document.getElementById("risultatoNome");
-console.log(elP);
 
 
-// const myButton = document.querySelector("button");
+// tutti gli elementi del form
 
-// myButton.addEventListener("click", function (event){
-//     console.log(elInputName.value);
-//     elP.innerText = elInputName.value;
+const nomeField = document.getElementById("nomeField");
+const cognomeField = document.getElementById("cognomeField");
+const etaField = document.getElementById("etaField");
+const kmField = document.getElementById("kmField");
+const form = document.querySelector("form");
 
-// })
+// tutti gli elementi del biglietto da stampare 
 
+const nome = document.getElementById("nome");
+const offerta = document.getElementById("offerta");
+const carrozza = document.getElementById("carrozza");
+const km = document.getElementById("km");
+const price = document.getElementById("price");
 
+// all'invio del form, si aggiornano i valori del biglietto 
 
+form.addEventListener("submit", function(event){
+    event.preventDefault()
+})
 
+// aggiorniamo i valori del biglietto stampato 
+
+nome.innerText = titleField.value;
+
+ticketprice.inneerTeXT = price.toFixed(2) + "€";
 
 
 
