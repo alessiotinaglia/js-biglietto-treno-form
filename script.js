@@ -52,8 +52,6 @@ const priceOutput = document.getElementById("price-output");
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // Verifica che tutti i campi siano compilati
-
     // Prendo i valori dai campi del form
     const nome = nomeField.value;
     const cognome = cognomeField.value;
