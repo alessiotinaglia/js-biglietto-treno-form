@@ -30,7 +30,7 @@
 // // Prezzo finale con massimo due decimali
 // console.log(`Il prezzo finale del viaggio è: ${prezzoFinale.toFixed(2)} €`);
 
-// Prezzo per km (puoi modificarlo)
+// Costanti
 const prezzoPerKm = 0.21;
 const numeroCarrozza = Math.floor(Math.random() * 50) + 1;
 const codiceCP = Math.floor(Math.random() * 100000) + 1;
